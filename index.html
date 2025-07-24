@@ -1,0 +1,237 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   PORTOFOLIO
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .transition-transform {
+      transition: transform 0.3s ease;
+    }
+    .hover-scale:hover {
+      transform: scale(1.05);
+    }
+  </style>
+ </head>
+ <body class="bg-gray-50 text-gray-900">
+  <!-- Hero Section -->
+  <header class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-600 text-white px-6 text-center">
+   <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight mb-4 drop-shadow-lg">
+    PORTFOLIO
+   </h1>
+   <p class="text-xl sm:text-2xl max-w-3xl font-semibold drop-shadow-md">
+    Crafting Digital Stories with Innovation, Precision, and Passion
+   </p>
+  </header>
+  <!-- Featured Projects Section -->
+  <section class="py-16 px-6 max-w-7xl mx-auto">
+   <h2 class="text-4xl font-bold text-center mb-12 tracking-wide text-gray-800">
+    Featured Projects
+   </h2>
+   <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+
+  <!-- Instagram Reels: Juara 3 Short Movie STikes -->
+  <article onclick="openReels('https://www.instagram.com/reel/DJoEdXIOJCS/')" class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer">
+    <img src="FILM1.jpg" class="w-full h-48 object-cover" alt="Screenshot video film" />
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-indigo-700">Sentuhan Terakhir</h3>
+      <p class="text-gray-700">Juara 3 Short Movie STikes</p>
+    </div>
+  </article>
+
+  <!-- Google Drive File: Amerop Business Academy -->
+  <article onclick="openModal('https://drive.google.com/file/d/1oXBorGuPazvIJZm8RSLo3fxlPzeVD2fK/preview')" class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer">
+    <img src="Arjuna Putra Yandi.png" class="w-full h-48 object-cover" alt="Motion graphic thumbnail" />
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-indigo-700">Amerop Business Academy 2025</h3>
+      <p class="text-gray-700">Lolos Proposal Tahap Awal</p>
+    </div>
+  </article>
+
+  <!-- YouTube: Restart -->
+  <article onclick="openModal('https://www.youtube.com/embed/WDpl4NYPJdg')" class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer">
+    <img src="film2.jpg" class="w-full h-48 object-cover" alt="Modern responsive website screenshot" />
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-indigo-700">Restart</h3>
+      <p class="text-gray-700">10 Besar Short Movie SIC 2025</p>
+    </div>
+  </article>
+
+  <!-- Instagram Reels: Ramadhan -->
+  <article onclick="openReels('https://www.instagram.com/reel/DHOcW-xSWrl/')" class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer">
+    <img src="Thumbnail Film.jpg" class="w-full h-48 object-cover" alt="Editing timeline thumbnail" />
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-indigo-700">Jika ini adalah ramadhan terakhirku</h3>
+      <p class="text-gray-700">10 Besar Short Movie CozyKos.id 2025</p>
+    </div>
+  </article>
+
+  <!-- Google Drive Folder: Fotografer -->
+  <article onclick="window.open('https://drive.google.com/drive/folders/1BrvZaJFWQV-RTFZGapq4-OvBbButViw0', '_blank')" class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer">
+    <img src="foto.jpg" class="w-full h-48 object-cover" alt="Fotografi thumbnail" />
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-indigo-700">Fotografer</h3>
+      <p class="text-gray-700">Acara Khitanan</p>
+    </div>
+  </article>
+
+  <!-- Google Drive File: Samsung -->
+  <article onclick="openModal('https://drive.google.com/file/d/1pvBbYjsgBQcqrTMjBuvoMjf3WSYhMPgQ/preview')" class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer">
+    <img src="sertif.png" class="w-full h-48 object-cover" alt="Sertifikat Samsung" />
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-indigo-700">Samsung Innovation Campus</h3>
+      <p class="text-gray-700">Logic Test Samsung Innovation Campus Batch 6</p>
+    </div>
+  </article>
+
+</div>
+
+<!-- Modal untuk YouTube dan Google Drive -->
+<div id="videoModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-lg overflow-hidden w-full max-w-3xl relative">
+    <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-700 hover:text-black text-xl font-bold z-10">&times;</button>
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe id="videoFrame" class="w-full h-full" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Modal untuk Instagram Reels -->
+<div id="reelsModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-lg p-6 max-w-md text-center relative">
+    <button onclick="closeReels()" class="absolute top-2 right-2 text-gray-700 hover:text-black text-xl font-bold">&times;</button>
+    <h2 class="text-xl font-semibold mb-4">Tonton Video di Instagram</h2>
+    <p class="mb-4 text-gray-600">Klik tombol di bawah untuk membuka Reels:</p>
+    <a id="reelsLink" href="#" target="_blank" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Buka di Instagram</a>
+  </div>
+</div>
+
+<!-- Script -->
+<script>
+  function openModal(videoUrl) {
+    const refreshedUrl = videoUrl + "?autoplay=1&ts=" + new Date().getTime();
+    document.getElementById('videoFrame').src = refreshedUrl;
+    document.getElementById('videoModal').classList.remove('hidden');
+  }
+
+  function closeModal() {
+    document.getElementById('videoFrame').src = "";
+    document.getElementById('videoModal').classList.add('hidden');
+  }
+
+  function openReels(link) {
+    document.getElementById('reelsLink').href = link;
+    document.getElementById('reelsModal').classList.remove('hidden');
+  }
+
+  function closeReels() {
+    document.getElementById('reelsModal').classList.add('hidden');
+    document.getElementById('reelsLink').href = "#";
+  }
+</script>
+
+  <!-- Personal Profile Section -->
+  <section class="bg-white py-16 px-6 max-w-5xl mx-auto rounded-lg shadow-lg mb-16">
+   <div class="flex flex-col md:flex-row items-center md:items-start gap-10">
+    <img alt="Portrait of the IT production house founder wearing smart casual clothing with a clean studio background" class="rounded-full w-48 h-48 object-cover flex-shrink-0" height="300" loading="lazy" src="juna.jpg" width="300"/>
+    <div class="flex-1">
+     <h2 class="text-4xl font-bold text-indigo-700 mb-4">
+      Arjuna Putra Yandi
+     </h2>
+     <p class="text-gray-700 mb-6 leading-relaxed text-lg">
+      Mahasiswa Teknik Informatika berprestasi dengan pengalaman kepemimpinan yang kuat (Ketua UKM, EO,
+Pelaksana acara), keahlian pengembangan web, dan kemampuan kreatif (juara lomba film pendek). Berdedikasi
+untuk menggabungkan keterampilan teknis dan interpersonal dalam peran yang menantang.
+
+     </p>
+     <h3 class="text-2xl font-semibold text-gray-800 mb-3">
+      Skills
+     </h3>
+     <ul class="flex flex-wrap gap-3 mb-8">
+      <li class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-semibold text-sm shadow-sm">
+       Video Editing
+      </li>
+      <li class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-semibold text-sm shadow-sm">
+       Motion Graphics
+      </li>
+      <li class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-semibold text-sm shadow-sm">
+       Web Development
+      </li>
+      <li class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-semibold text-sm shadow-sm">
+       Color Grading
+      </li>
+      <li class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-semibold text-sm shadow-sm">
+       Animation
+      </li>
+      <li class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-semibold text-sm shadow-sm">
+       UX/UI Design
+      </li>
+     </ul>
+     <a aria-label="Download Alex Morgan's resume" class="inline-block bg-indigo-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-indigo-800 transition-colors" download="PixelForge_Resume_AlexMorgan.pdf" href="first resume.pdf">
+      Download Resume
+     </a>
+    </div>
+   </div>
+  </section>
+  <!-- Contact Section -->
+  <section class="bg-indigo-700 py-16 px-6 text-white">
+   <div class="max-w-4xl mx-auto">
+    <h2 class="text-4xl font-bold mb-10 text-center tracking-wide">
+     Get in Touch
+    </h2>
+    <form action="https://formspree.io/f/mayvlzqv" class="max-w-3xl mx-auto grid grid-cols-1 gap-6" method="POST" novalidate="">
+     <label class="flex flex-col">
+      <span class="mb-2 font-semibold">
+       Name
+      </span>
+      <input class="rounded-md px-4 py-3 text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-pink-400" name="name" placeholder="Your full name" required="" type="text"/>
+     </label>
+     <label class="flex flex-col">
+      <span class="mb-2 font-semibold">
+       Email
+      </span>
+      <input class="rounded-md px-4 py-3 text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-pink-400" name="_replyto" placeholder="you@example.com" required="" type="email"/>
+     </label>
+     <label class="flex flex-col">
+      <span class="mb-2 font-semibold">
+       Message
+      </span>
+      <textarea class="rounded-md px-4 py-3 text-gray-900 font-medium resize-y focus:outline-none focus:ring-2 focus:ring-pink-400" name="message" placeholder="Write your message here..." required="" rows="5"></textarea>
+     </label>
+     <button class="bg-pink-500 hover:bg-pink-600 transition-colors font-bold py-3 rounded-md shadow-lg" type="submit">
+      Send Message
+     </button>
+    </form>
+    <div class="mt-12 flex justify-center space-x-8 text-2xl">
+     <a aria-label="LinkedIn" class="hover:text-pink-400 transition-colors" href="https://www.linkedin.com/in/alexmorgan" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-linkedin">
+      </i>
+     </a>
+     <a aria-label="Twitter" class="hover:text-pink-400 transition-colors" href="https://twitter.com/alexmorgan" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-twitter-square">
+      </i>
+     </a>
+     <a aria-label="GitHub" class="hover:text-pink-400 transition-colors" href="https://github.com/alexmorgan" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-github-square">
+      </i>
+     </a>
+     <a aria-label="Instagram" class="hover:text-pink-400 transition-colors" href="https://www.instagram.com/alexmorgan" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-instagram-square">
+      </i>
+     </a>
+    </div>
+   </div>
+  </section>
+  <footer class="bg-gray-100 py-6 text-center text-gray-600 font-medium">
+   © 2024 PixelForge Productions. All rights reserved.
+  </footer>
+ </body>
+</html>
